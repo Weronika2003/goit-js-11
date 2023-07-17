@@ -1,21 +1,33 @@
-export default class LoadMoreBtn {
-  constructor({ selector, isHidden = false }) {
-    this.button = document.querySelector(selector);
-    isHidden && this.hide();
-  }
+// class ElementControl {
+//   constructor(elementRefs) {
+//     this.elementRefs = elementRefs;
+//   }
 
-  enable() {
-    this.button.disabled = false;
-    this.button.textContent = 'Load more';
-  }
-  disable() {
-    this.button.disabled = true;
-    this.button.textContent = 'Loading...';
-  }
-  show() {
-    this.button.classList.remove('hidden');
-  }
-  hide() {
-    this.button.classList.add('hidden');
-  }
-}
+//   disable() {
+//     this.elementRefs.setAttribute('disabled', 'true');
+//   }
+
+//   enable() {
+//     this.elementRefs.removeAttribute('disabled');
+//   }
+
+//   toggleIcon() {
+//     const iconRefs = this.elementRefs.querySelectorAll('img');
+//     iconRefs.forEach(icon => icon.classList.toggle('is-hidden'));
+//     return this;
+//   }
+
+//   hide() {
+//     this.elementRefs.classList.add('is-hidden');
+//   }
+
+//   show() {
+//     this.elementRefs.classList.remove('is-hidden');
+//   }
+
+//   setText(text) {
+//     this.elementRefs.querySelector('span').textContent = text;
+//   }
+// }
+
+// export default ElementControl;

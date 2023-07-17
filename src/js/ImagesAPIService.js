@@ -1,29 +1,38 @@
-import axios from 'axios';
-const API_KEY = '38295997-c79217038b4f657b51b1fa265';
-const MAIN_URL = 'https://pixabay.com/api/';
+// import axios from 'axios';
+// const API_KEY = '38295997-c79217038b4f657b51b1fa265';
+// axios.defaults.baseURL = 'https://pixabay.com/api';
 
-export default class ImagesAPIService {
-  constructor() {
-    this.page = 1;
-    this.searchValue = '';
-  }
+// const limit = 40;
 
-  async getImages() {
-    const url = `${MAIN_URL}?key=${API_KEY}&q=${this.searchValue}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.page}&per_page=40`;
-    const response = await axios.get(url);
-    this.incrementPage();
+// class FetchImages {
+//   #query;
 
-    return response.data;
-  }
+//   constructor() {
+//     this.page = 1;
+//   }
 
-  setSearchValue(query) {
-    this.searchValue = query;
-  }
+//   set query(newQuery) {
+//     this.page = 1;
+//     this.#query = newQuery;
+//   }
 
-  incrementPage() {
-    this.page += 1;
-  }
-  resetPage() {
-    this.page = 1;
-  }
-}
+//   async fetch() {
+//     const response = await axios.get(`/?key=${API_KEY}`, {
+//       params: {
+//         q: this.#query,
+//         page: this.page,
+//         per_page: limit,
+//         image_type: 'foto',
+//         orientation: 'horizontal',
+//         safesearch: true,
+//       },
+//     });
+//     if (this.page > response.data.totalHits / limit) {
+//       response.data.isEnd = true;
+//     }
+//     this.page += 1;
+//     return response.data;
+//   }
+// }
+
+// export default FetchImages;
